@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass {
+    @apply bg-gray-900/75 backdrop-blur-md;
+  }
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  @apply bg-[#0f172a] text-gray-100 selection:bg-indigo-500/30 selection:text-indigo-200 overflow-x-hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+/* Button Glow Effect */
+.btn-primary-glow {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+      to right, 
+      transparent, 
+      rgba(255, 255, 255, 0.1), 
+      transparent
+  );
+  transform: skewX(-15deg);
+  transition: 0.5s;
+}
+.btn-primary-glow:hover::before {
+  left: 100%;
+  transition: 0.5s;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); max-height: 0; }
+  to { opacity: 1; transform: translateY(0); max-height: 500px; }
+}
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out forwards;
+}

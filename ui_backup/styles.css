@@ -1,0 +1,82 @@
+/* Custom Styles for Chatterbox TTS (Arabic/Dark Mode) */
+
+/* Font Family handled by Tailwind Config in HTML */
+
+/* Glassmorphism Utilities */
+.glass {
+    background: rgba(17, 24, 39, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+}
+
+/* Toggle Switch RTL Fix */
+/* When using peer-checked with logical properties or standard tailwind in RTL, 
+   we sometimes need to manually handle the slide direction if the browser doesn't flip it perfectly. */
+[dir="rtl"] .peer-checked\:after\:translate-x-full:checked::after {
+    transform: translateX(-100%);
+}
+
+/* WaveSurfer Overrides */
+#audio-player-container wave {
+    overflow: hidden !important;
+    border-radius: 0.75rem; /* rounded-xl */
+}
+
+/* Button Glow Effect */
+.btn-primary-glow {
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+    transform: skewX(-15deg);
+    transition: 0.5s;
+}
+.btn-primary-glow:hover::before {
+    left: 100%;
+    transition: 0.5s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); max-height: 0; }
+    to { opacity: 1; transform: translateY(0); max-height: 500px; }
+}
+.animate-slide-down {
+    animation: slideDown 0.4s ease-out forwards;
+}

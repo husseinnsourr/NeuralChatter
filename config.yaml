@@ -1,0 +1,51 @@
+server:
+  host: 0.0.0.0
+  port: 8010
+  use_ngrok: false
+  use_auth: false
+  auth_username: user
+  auth_password: password
+  log_file_path: logs\tts_server.log
+  log_file_max_size_mb: 10
+  log_file_backup_count: 5
+model:
+  repo_id: ResembleAI/chatterbox
+tts_engine:
+  device: cuda
+  predefined_voices_path: voices
+  reference_audio_path: reference_audio
+  default_voice_id: Emily.wav
+paths:
+  model_cache: model_cache
+  output: outputs
+generation_defaults:
+  temperature: 0.65
+  exaggeration: 0.6
+  cfg_weight: 0.7
+  seed: 101
+  speed_factor: 1
+  language: en
+audio_output:
+  format: wav
+  sample_rate: 24000
+  max_reference_duration_sec: 60
+ui_state:
+  last_text:
+    "To be, or not to be, that is the question: whether 'tis nobler in the
+    mind to suffer the slings and arrows of outrageous fortune, or to take arms against
+    a sea of troubles and by opposing end them."
+  last_voice_mode: clone
+  last_predefined_voice: Gabriel.wav
+  last_reference_file: Hussein_Nsour.wav
+  last_seed: 101
+  last_chunk_size: 530
+  last_split_text_enabled: true
+  hide_chunk_warning: false
+  hide_generation_warning: true
+  theme: light
+ui:
+  title: Chatterbox TTS Server
+  show_language_select: true
+  max_predefined_voices_in_dropdown: 50
+debug:
+  save_intermediate_audio: false
