@@ -1,5 +1,7 @@
 # 🎙️ NeuralChatter TTS 🌍
 
+[![License: GPL-3.0-only](https://img.shields.io/github/license/husseinnsourr/NeuralChatter)](LICENSE)
+
 ### Multilingual TTS Server with LoRA Fine-Tuning
 
 > **🔀 Enhanced Fork by [Hussein](https://github.com/husseinnsourr)**
@@ -115,7 +117,34 @@ tts_engine:
 
 ## 📜 License
 
-This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**. Contributions must be shared back with the community.
+NeuralChatter's **original code and modifications** are licensed under the
+**GNU General Public License v3.0 only** (`GPL-3.0-only`). See [`LICENSE`](LICENSE).
+
+Copyright (C) 2026 Hussein ([husseinnsourr](https://github.com/husseinnsourr)) for the original
+NeuralChatter code (LoRA training scripts, React UI in `ui_src/`) and for the modifications made to inherited files.
+
+### Inherited code and credits
+
+NeuralChatter is built on MIT-licensed projects. Their copyright and license
+notices are preserved unchanged in [`THIRD_PARTY_NOTICES/`](THIRD_PARTY_NOTICES/):
+
+| Project | Copyright | License |
+| --- | --- | --- |
+| [devnen/Chatterbox-TTS-Server](https://github.com/devnen/Chatterbox-TTS-Server) (server, engine, config, utils, original web UI) | © 2025 devnen | MIT |
+| [resemble-ai/chatterbox](https://github.com/resemble-ai/chatterbox) (TTS engine and model) | © 2025 Resemble AI | MIT |
+
+The inherited portions remain the work of their authors. The GPL-3.0 applies to
+NeuralChatter's own contributions and to the combined work as distributed; it does
+not replace or remove the upstream MIT licenses.
+
+### What the license does not cover
+
+- **Model weights and data** (Resemble AI Chatterbox weights, tokenizers) keep their upstream license (MIT).
+- **Third-party libraries** keep their own licenses (see `THIRD_PARTY_NOTICES/README.md`).
+- **Audio files** in `loRa/` and `reference_audio/` are **not** licensed under the GPL (see [`ASSETS_NOTICE.md`](ASSETS_NOTICE.md)).
+
+The GPL requires that anyone who distributes this software or a modified version provides the
+corresponding source under the same license. It does not require sending changes back to this repository.
 
 ---
 
